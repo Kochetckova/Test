@@ -1,0 +1,33 @@
+# Кейс-задача № 3 
+ 
+
+# Задаем массив
+arr = [0 , 1, 3354, 5, 8, 331224.234, -345.234, -546654.234, 24, -52]
+
+# Длину массива
+arr_len = len(arr)
+
+# Если массив пустой или длиной 1 или 2, то будет 0
+if arr_len <=2:
+    result = 0
+# Иначе находим Max и Min элементы и считаем их сумму
+else:
+    # Max и Min элементы
+    max_value = max(arr)
+    min_value = min(arr)
+    
+    # Вычисляем идекс Max и Min элементов
+    max_value_index = arr.index(max_value)
+    min_value_index = arr.index(min_value)
+    
+    # Находим, какой из них раньше
+    start_index = min(max_value_index,min_value_index)+1
+    end_index = max(max_value_index,min_value_index)
+    
+    result = 0
+    # подсчитываем сумму отрицательных элементов
+    for num in arr[start_index:end_index]:
+        if num<0:
+            result = result + num
+          
+print (result)
